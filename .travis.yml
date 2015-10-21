@@ -6,9 +6,9 @@ sudo: false
 env:
     global:
         # Add the BINSTAR_TOKEN environment variable. This has been generated with 
-        # 'anaconda auth --create --name JascRecipesTravis --scopes "repos conda"' 
+        # 'anaconda auth --create --name JascRecipesTravis --scopes "repos conda api"' 
         # then "travis encrypt BINSTAR_TOKEN=<token_id>"
-        secure: "VTd2J5G94NdShz7mTEAdF99x1XIJ4Mtn6lemInmZRE5uFQhaY40XhPME+rMJdk5yhw/XwaBCKTZ0zQ95INUBrmQ05do86AysNYCFw0lcIsgKDThbhnr/hCjKncxLKjyomIOiiGD2eqO0QuiAK6mr07one2LlG2o8Xz5iBKMIwCiD96QVP+8/FkJuEIvJOkwUtwPLNvZSSNuFhdIP9+UFojFT1Xnkls977yXKqM6hBKWBQ6sLJQ7qvGZHU5Qm5d5HgXVQj6zJF8e2p41Dh1sAf1KYdxKhACfl4/pLiZlYvtntmy53HYryIh1ewewDp6VJ4nE8gXaHHPMjTyu7Rd2YFYD6WMchfaYPbXxDz590JLpfP+1ksWLHvjhp0KxJo8fXpdTxNkFZwTbBzn9LCLQayKgsVKin6LxzNCfEldZUEveOQPV/03pgXIy7ToZ1Krd7vXvx5d/72ISi1Y6GxHhJMExjf+KeSi/bgrKPHTgJlsWD8Jv3IXLF92eioCJSAgB3jjENpH6qibUGzE+hTDDwPDUS2o/kfVORz9Yqb8GiPcBO7Ri9fuswFJOzUzVC32zEObx+lnjtlzTcXdLuCp3bo3Fqc820n+UapQRsOl+LHPev1j4lvZviBTAzYazWOlhwX2v/3yma4WiHfj9xAmadptxPeiNzEJMDW1+wkHuGX1c="
+        secure: "SNeSk+B26Y6zrbVBamJCgtC0Nv3nUka0VVLdyOYjBwmIiI65asV6MXwp/S+OW8xgl2/8JWfqr9V4XntdtUmQ5mls4ostco791mojeFLKsER00UrEn/c9uGZWWxeczwCnKAQ4nzRIivQv/3JuosMBhtLLTUGWgVdS/6sRk3jdFmN4jXbv8Nq/fTYv0My4FEfA6Q6xn1BzjI8Z3xI8OyVIC3tXQTu2VQLjyocZ67QmGeb/f1KxmqmPWmmnr8qIEIL+VSUdDU/PzK1i83agLqVeSK5j5a8/gBsrKWnz80WU7/fWR3GIqnvjBYFfSmDLBGz5UW/W5D52NqYwcjZuyQu7QRhodx/ht/RwWTV6K8lWC5/r30dQ/9Rl682UXBgt8v3SqE2AxN3iuHdUJi+OBnKVm+nvSYq9kUxuOKPBYvdgz8PPwRlScYkdwJX3noGlXuHbEY70xfrNVuNRXF7SFzT4F5zMFJZr2GDzFBEJFpnu5VXKYQxcFqTDv59ZAG0pki0TgHWE6hSNA1N1T5WDZS7mv6LUOPWbazp4004oKr00KHMP6un5HknvRJ4KWzHnTaV7LnB/XSDwFK9M99ukLbX4vnmCs9imUdpTmvortJk470Grlv38WAkg2uYn4K3bmASOIj4p/3WQ8wZfCwrOn52D6akLUHgp1qF23nEQwBeH90c="
 
 addons:
     apt:

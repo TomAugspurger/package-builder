@@ -13,5 +13,5 @@ test:
   override:
     # This needs to set a env var in circle CI: 
     # CircleCI -> Project settings -> env variables -> name: BINSTAR_TOKEN, value: 
-    # 'anaconda auth --create --name JascRecipesCircleCI --scopes "repos conda"'
+    # 'anaconda auth --create --name JascRecipesCircleCI --scopes "repos conda api"'
     - ./scripts/run_docker_build.sh

@@ -11,8 +11,8 @@ environment:
   PYTHONIOENCODING: "UTF-8"
 
   BINSTAR_TOKEN:
-    # Generated with 'anaconda auth --create --name JascRecipesAppveyor --scopes "repos conda"' and encrypted on ci.appveyor.com/tools/encrypt. 
-    secure: G3yJ7PbdkvCwAeIUnPlL5Uj1BrOugPrMCNkAt0kz2POs0zh81k84DOtZc8hVMifW
+    # Generated with 'anaconda auth --create --name JascRecipesAppveyor --scopes "repos conda api"' and encrypted on ci.appveyor.com/tools/encrypt. 
+    secure: 6nTE13FCkSFChbPOOtQLXOW0onh3sBpUGJew9iI8sztvY/YBP+JAGoYhbY9tubG5
 
   matrix:
     # Note: Because we have to separate the py2 and py3 components due to compiler version, we have a race condition for non-python packages.
