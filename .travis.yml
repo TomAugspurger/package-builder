@@ -1,0 +1,38 @@
+# The language in this case has no bearing - we are going to be making use of conda.
+language: objective-c
+
+sudo: false
+
+env:
+    global:
+        # Add the BINSTAR_TOKEN environment variable. This has been generated with 
+        # 'anaconda auth --create --name JascRecipesTravis --scopes "repos conda"' 
+        # then "travis encrypt BINSTAR_TOKEN=<token_id>"
+        secure: "VTd2J5G94NdShz7mTEAdF99x1XIJ4Mtn6lemInmZRE5uFQhaY40XhPME+rMJdk5yhw/XwaBCKTZ0zQ95INUBrmQ05do86AysNYCFw0lcIsgKDThbhnr/hCjKncxLKjyomIOiiGD2eqO0QuiAK6mr07one2LlG2o8Xz5iBKMIwCiD96QVP+8/FkJuEIvJOkwUtwPLNvZSSNuFhdIP9+UFojFT1Xnkls977yXKqM6hBKWBQ6sLJQ7qvGZHU5Qm5d5HgXVQj6zJF8e2p41Dh1sAf1KYdxKhACfl4/pLiZlYvtntmy53HYryIh1ewewDp6VJ4nE8gXaHHPMjTyu7Rd2YFYD6WMchfaYPbXxDz590JLpfP+1ksWLHvjhp0KxJo8fXpdTxNkFZwTbBzn9LCLQayKgsVKin6LxzNCfEldZUEveOQPV/03pgXIy7ToZ1Krd7vXvx5d/72ISi1Y6GxHhJMExjf+KeSi/bgrKPHTgJlsWD8Jv3IXLF92eioCJSAgB3jjENpH6qibUGzE+hTDDwPDUS2o/kfVORz9Yqb8GiPcBO7Ri9fuswFJOzUzVC32zEObx+lnjtlzTcXdLuCp3bo3Fqc820n+UapQRsOl+LHPev1j4lvZviBTAzYazWOlhwX2v/3yma4WiHfj9xAmadptxPeiNzEJMDW1+wkHuGX1c="
+
+addons:
+    apt:
+        packages:
+            # Install makeinfo [sic] - needed for constructing configuration
+            # files via autoreconf (in particular for udunits)
+            - texinfo
+
+            # Unit testing framework for C (used by libmo_unpack)
+            - check
+
+before_install:
+    - brew update && brew install check
+
+install:
+    - wget https://raw.githubusercontent.com/pelson/Obvious-CI/master/bootstrap-obvious-ci-and-miniconda.py
+    - python bootstrap-obvious-ci-and-miniconda.py ~/miniconda x64 2 --without-obvci && source ~/miniconda/bin/activate root
+    - conda config --set show_channel_urls True
+    - conda install -c http://conda.binstar.org/pelson/channel/development --yes --quiet obvious-ci
+    - conda config --add channels janschulz
+    - conda config --set show_channel_urls yes
+    - conda info
+    - obvci_install_conda_build_tools.py
+
+script:
+    - obvci_conda_build_dir.py ./recipes janschulz --channel main --build-condition "numpy >=1.8" "python >=2.7,<3|>=3.4,<3.5"
+

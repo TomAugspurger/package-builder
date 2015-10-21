@@ -1,0 +1,17 @@
+machine:
+  services:
+    - docker
+
+dependencies:
+  # Note, we used to use the naive caching of docker images, but found that it was quicker
+  # just to pull each time. #rollondockercaching
+  override:
+    - docker pull pelson/obvious-ci:latest_x64
+#    - docker pull pelson/conda32_obvious_ci
+
+test:
+  override:
+    # This needs to set a env var in circle CI: 
+    # CircleCI -> Project settings -> env variables -> name: BINSTAR_TOKEN, value: 
+    # 'anaconda auth --create --name JascRecipesCircleCI --scopes "repos conda"'
+    - ./scripts/run_docker_build.sh
