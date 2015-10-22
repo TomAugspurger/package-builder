@@ -3,8 +3,8 @@ package:
   version: 1.1.0
 
 source:
-  git_url: https://github.com/bebraw/pypandoc.git
-  git_tag: v1.1.0
+  git_url: https://github.com/janschulz/pypandoc.git
+  git_tag: upload_tests
 
 requirements:
   build:
