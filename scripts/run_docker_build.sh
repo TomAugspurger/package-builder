@@ -36,6 +36,7 @@ conda clean --lock
 conda update --yes conda conda-build
 conda install --yes anaconda-client
 conda info
+pip install twine
 unset LANG
 
 # These are some standard tools. But they aren't available to a recipe at this point (we need to figure out how a recipe should define OS level deps)

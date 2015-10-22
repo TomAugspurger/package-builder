@@ -32,6 +32,7 @@ install:
     - conda config --set show_channel_urls yes
     - conda info
     - obvci_install_conda_build_tools.py
+    - pip install twine
 
 script:
     - obvci_conda_build_dir.py ./recipes janschulz --channel main --build-condition "numpy >=1.8" "python >=2.7,<3|>=3.4,<3.5"
