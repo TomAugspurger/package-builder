@@ -15,7 +15,7 @@ if errorlevel 1 exit 1
 @echo repository: https://pypi.python.org/pypi
 @echo. 
 @echo [pypitest] # authentication details for test PyPI
-@echo repository: https://testpypi.python.org/pypiuse this file to run your own startup commands 
+@echo repository: https://testpypi.python.org/pypi
 ) > "pypirc"
 
 echo "Upload wheels..."

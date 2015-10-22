@@ -48,7 +48,7 @@ install:
     - cmd: set PATH=%PATH%;%CONDA_INSTALL_LOCN%;%CONDA_INSTALL_LOCN%\scripts
     - cmd: set PYTHONUNBUFFERED=1
 
-    - cmd: conda install -c http://conda.binstar.org/pelson/channel/development --yes --quiet obvious-ci
+    - cmd: conda install -c http://conda.anaconda.org/pelson/channel/development --yes --quiet obvious-ci
     - cmd: obvci_install_conda_build_tools.py
 
     - cmd: conda config --add channels janschulz
