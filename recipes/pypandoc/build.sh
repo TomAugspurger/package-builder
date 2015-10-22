@@ -2,9 +2,10 @@
 
 # we check our return status..
 set +e
+platform = $(expr substr $(uname -s) 1 5)
 
 $PYTHON setup.py download_pandoc 
-if [ $? -eq 0 ]; 
+if [ $? -eq 0  && ${platform} != "Linux" ]; 
 then
   echo "Build wheels..."
   $PYTHON setup.py bdist_wheel
@@ -21,14 +22,13 @@ repository: https://pypi.python.org/pypi
 [pypitest] # authentication details for test PyPI
 repository: https://testpypi.python.org/pypi
 EOF
+  set +x
+  echo "uploading via twine"
   twine upload -u $PYPI_USER -p $PYPI_PASS --config-file pypirc -r pypitest dist/pypandoc-*.whl
+  set -x
 fi
-echo "Cleanup wheel build..."
-$PYTHON setup.py clean
-rm pypandoc\files\*.*
-rm pandoc-*-osx.pkg
-rm pandoc-*-amd64.deb
-rm pypirc
+
+# rm pypandoc/files/*.*
 
 $PYTHON setup.py install --single-version-externally-managed  --record record.txt
 exit $?

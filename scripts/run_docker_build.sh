@@ -26,6 +26,10 @@ cat << EOF | docker run -i \
 if [ "${BINSTAR_TOKEN}" ];then
     export BINSTAR_TOKEN=${BINSTAR_TOKEN}
 fi
+if [ "${PYPI_USER}" ];then
+    export PYPI_USER=${PYPI_USER}
+    export PYPI_PASS=${PYPI_PASS}
+fi
 
 export PYTHONUNBUFFERED=1
 echo "$config" > ~/.condarc
@@ -45,9 +49,9 @@ unset LANG
 # These were specific to installing matplotlib. I really want to avoid doing this if possible, but in some cases it
 # is inevitable (without re-implementing a full OS), so I also really want to ensure we can annotate our recipes to
 # state the build dependencies at OS level, too.
-yum install -y libXext libXrender libSM tk libX11-devel
+#yum install -y libXext libXrender libSM tk libX11-devel
 
-obvci_conda_build_dir.py /conda-recipes $UPLOAD_OWNER --build-condition "numpy >=1.8" "python >=2.7,<3|>=3.4,<3.5"
+obvci_conda_build_dir.py /conda-recipes $UPLOAD_OWNER --build-condition "numpy >=1.8" "python >=2.7,<3|>=3.4,<3.5|>=3.5,<3.6"
     
 EOF
 
