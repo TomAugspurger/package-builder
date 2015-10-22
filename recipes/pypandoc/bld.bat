@@ -15,7 +15,8 @@ if errorlevel 0 (
     @echo [pypitest] # authentication details for test PyPI
     @echo repository: https://testpypi.python.org/pypiuse this file to run your own startup commands 
     ) > "pypirc"
-   twine upload -u %PYPI_USER% -p %PYPI_PASS% --config-file pypirc -r pypitest dist/pypandoc-*.whl
+   rem Upload via Twine
+   @twine upload -u %PYPI_USER% -p %PYPI_PASS% --config-file pypirc -r pypitest dist/pypandoc-*.whl
 )
 echo "Cleanup wheel build..."
 "%PYTHON%" setup.py clean
