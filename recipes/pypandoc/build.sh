@@ -1,11 +1,7 @@
 #!/bin/bash
 
-# we check our return status..
-set +e
-platform = $(expr substr $(uname -s) 1 5)
-
 $PYTHON setup.py download_pandoc 
-if [ $? -eq 0  && ${platform} != "Linux" ]; 
+if [ "$(uname -s)" != "Linux" ]; 
 then
   echo "Build wheels..."
   $PYTHON setup.py bdist_wheel
@@ -22,13 +18,13 @@ repository: https://pypi.python.org/pypi
 [pypitest] # authentication details for test PyPI
 repository: https://testpypi.python.org/pypi
 EOF
+  # set +x because we don't want to echo the user and password to the log
   set +x
   echo "uploading via twine"
-  twine upload -u $PYPI_USER -p $PYPI_PASS --config-file pypirc -r pypitest dist/pypandoc-*.whl
+  twine upload -u $PYPI_USER -p $PYPI_PASS --config-file pypirc -r pypi dist/pypandoc-*.whl
   set -x
 fi
 
 # rm pypandoc/files/*.*
 
 $PYTHON setup.py install --single-version-externally-managed  --record record.txt
-exit $?

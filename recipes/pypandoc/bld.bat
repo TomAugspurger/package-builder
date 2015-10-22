@@ -1,6 +1,9 @@
 "%PYTHON%" setup.py download_pandoc
+if errorlevel 1 exit 1
+
 echo "Build wheels..."
 "%PYTHON%" setup.py bdist_wheel
+if errorlevel 1 exit 1
 
 (
 @echo [distutils] # this tells distutils what package indexes you can push to
@@ -16,7 +19,9 @@ echo "Build wheels..."
 ) > "pypirc"
 
 echo "Upload wheels..."
-@twine upload -u %PYPI_USER% -p %PYPI_PASS% --config-file pypirc -r pypitest dist/pypandoc-*.whl
+:: @ because we don't want to echo the user and password to the log
+@twine upload -u %PYPI_USER% -p %PYPI_PASS% --config-file pypirc -r pypi dist/pypandoc-*.whl
+if errorlevel 1 exit 1
 
 :: del /q pypandoc\files\*.*
 
