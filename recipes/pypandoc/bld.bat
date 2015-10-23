@@ -21,7 +21,9 @@ if errorlevel 1 exit 1
 echo "Upload wheels..."
 :: @ because we don't want to echo the user and password to the log
 @twine upload -u %PYPI_USER% -p %PYPI_PASS% --config-file pypirc -r pypi dist/pypandoc-*.whl
-if errorlevel 1 exit 1
+:: let this fail -> it twine raises an error if a file is uploaded a second time, but we do want to 
+:: be able to restart a conda build.
+::if errorlevel 1 exit 1
 
 :: del /q pypandoc\files\*.*
 
