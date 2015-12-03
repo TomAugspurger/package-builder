@@ -6,9 +6,9 @@ package:
   version: 1.notrelevant
 
 source:
-  git_url: https://github.com/matplotlib/matplotlib.git
-  # after the better workaround for NamedTempfile
-  git_rev: 2ce2afc6
+  git_url: git://github.com/janschulz/matplotlib
+  # 20151203
+  git_rev: b363d3fc5ec48d15430eee60548ff7d29e261b65
 
   patches:
     # don't run nosetest
