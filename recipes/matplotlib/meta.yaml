@@ -3,12 +3,12 @@
 
 package:
   name: matplotlib
-  version: 1.notrelevant
+  # Increase to prevent additional builds -> can be set after the first package is build and then repushed...
+  version: 1.5.0+532.g3d942f7.dirty
 
 source:
   git_url: git://github.com/janschulz/matplotlib
-  # 20151203
-  git_rev: b363d3fc5ec48d15430eee60548ff7d29e261b65
+  git_rev: master
 
   patches:
     # don't run nosetest
@@ -30,16 +30,17 @@ requirements:
     - freetype >=2.5,<2.6
     - pyparsing
     - pytz
-    - py2cairo            [linux and py2k]
+    - py2cairo           #[linux and py2k]
     - tornado
     - libpng
     - zlib                [win]
-    - msinttypes          # this package is from the conda-forge channel!
+    # msinttypes is from the conda-forge or janschulz channel!
+    - msinttypes          [win]
     - pyqt                [not osx]
     - cycler
     - tk
      # this is currently only available in my channel
-    - functools32         [py27]
+    - functools32         [py2k]
 
   run:
     - python
@@ -48,11 +49,12 @@ requirements:
     - freetype            [unix]
     - pytz
     - pyparsing
-    - py2cairo            [linux and py2k]
+    - py2cairo           #[linux and py2k]
     - libpng              [unix]
     - pyqt                [not osx]
     - cycler
     - tk
+    - functools32         [py2k]
 
 test:
   requires:

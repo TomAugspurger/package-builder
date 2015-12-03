@@ -39,6 +39,7 @@ conda clean --lock
 
 conda update --yes conda conda-build
 conda install --yes anaconda-client
+conda config --set show_channel_urls yes
 conda info
 pip install twine
 unset LANG
@@ -49,9 +50,15 @@ unset LANG
 # These were specific to installing matplotlib. I really want to avoid doing this if possible, but in some cases it
 # is inevitable (without re-implementing a full OS), so I also really want to ensure we can annotate our recipes to
 # state the build dependencies at OS level, too.
-#yum install -y libXext libXrender libSM tk libX11-devel
+yum install -y libXext libXrender libSM tk libX11-devel
 
-obvci_conda_build_dir /conda-recipes $UPLOAD_OWNER --build-condition "python >=2.7,<3|>=3.4,<3.5|>=3.5,<3.6"
+#obvci_conda_build_dir /conda-recipes $UPLOAD_OWNER --build-condition "python >=3.4,<3.5|>=3.5,<3.6|>=2.7,<3"
+CONDA_PY=34
+obvci_conda_build_dir /conda-recipes $UPLOAD_OWNER --build-condition "python >=3.4,<3.5"
+CONDA_PY=35
+obvci_conda_build_dir /conda-recipes $UPLOAD_OWNER --build-condition "python >=3.5,<3.6"
+CONDA_PY=27
+obvci_conda_build_dir /conda-recipes $UPLOAD_OWNER --build-condition "python >=2.7,<3"
     
 EOF
 

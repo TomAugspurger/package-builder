@@ -2,6 +2,8 @@ import os
 import sys
 
 import matplotlib
+# workaround for osx
+matplotlib.use("Agg")
 import matplotlib.pyplot
 import matplotlib._cntr
 import matplotlib._delaunay

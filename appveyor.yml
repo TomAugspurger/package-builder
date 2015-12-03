@@ -55,6 +55,8 @@ install:
     - cmd: conda config --set show_channel_urls yes
     - cmd: conda info
     - cmd: pip install twine
+    # workaround for http://help.appveyor.com/discussions/problems/3712-git-remote-https-seems-to-be-broken
+    - cmd: rmdir /Q /S c:\cygwin
 
 # Skip .NET project specific build phase.
 build: off
