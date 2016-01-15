@@ -16,7 +16,7 @@ environment:
   PYPI_USER:
     secure: WmnI0UBQomLfClG70AGa9A==
   PYPI_PASS:
-    secure: b286+7+baCN6ddFBt3DzY8Rlh7dvbpjyeuLJDLoqX0E=
+    secure: vwvitc1udvvzJrSNBbxQrtNKPACCOpSM3kteJK6UBR8=
 
   matrix:
     # Note: Because we have to separate the py2 and py3 components due to compiler version, we have a race condition for non-python packages.

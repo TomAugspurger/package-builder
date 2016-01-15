@@ -15,4 +15,5 @@ test:
     # CircleCI -> Project settings -> env variables -> name: BINSTAR_TOKEN, value: 
     # 'anaconda auth --create --name JascRecipesCircleCI --scopes "repos conda api"'
     # Also  PYPI_USER and PYPI_PASS
+    # all via web...
     - ./scripts/run_docker_build.sh
