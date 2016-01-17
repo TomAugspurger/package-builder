@@ -12,7 +12,7 @@ build:
 requirements:
   build:
     - python
-    - distribute
+    - distribute # [not py35]
     - cython
     - numpy
     - scipy
