@@ -15,12 +15,14 @@ requirements:
     - pep8
     - docformatter
     - yapf
+    - colorama
 
   run:
     - python
     - pep8
     - docformatter
     - yapf
+    - colorama
 
 test:
   imports:
