@@ -13,10 +13,10 @@ build:
   
 requirements:
   build:
-    - python 2.7.*
+    - python
 
   run:
-    - python 2.7.*
+    - python
 
 test:
   imports:

@@ -1,5 +1,5 @@
 package:
-  name: pep8
+  name: cdiff
   version: "0.9.8"
 
 source:
