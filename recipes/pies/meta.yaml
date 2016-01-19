@@ -12,9 +12,11 @@ build:
 requirements:
   build:
     - python
+    - enum34 # [py27]
 
   run:
     - python
+    - enum34 # [py27]
 
 test:
   imports:
