@@ -1,0 +1,25 @@
+package:
+  name: pies
+  version: "2.6.3"
+
+source:
+  git_url: https://github.com/timothycrosley/pies.git
+  git_tag: "2.6.3"
+
+build:
+  number: 0
+
+requirements:
+  build:
+    - python
+
+  run:
+    - python
+
+test:
+  imports:
+    - pies
+
+about:
+  home: https://github.com/timothycrosley/pies
+  license : MIT License
