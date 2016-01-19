@@ -13,11 +13,11 @@ build:
   
 requirements:
   build:
-    - python 2.7
+    - python
     - ipaddress
 
   run:
-    - python 2.7
+    - python
     - ipaddress
 
 about:
