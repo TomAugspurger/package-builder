@@ -9,13 +9,14 @@ source:
 
 build:
   number: 0
-
+  skip: True  # [not py27]  
+  
 requirements:
   build:
-    - python
+    - python 2.7.*
 
   run:
-    - python
+    - python 2.7.*
 
 test:
   imports:
