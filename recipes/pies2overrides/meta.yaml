@@ -14,13 +14,11 @@ build:
 requirements:
   build:
     - python
+    - ipaddress
 
   run:
     - python
-
-test:
-  imports:
-    - pies2overrides
+    - ipaddress
 
 about:
   home: https://github.com/timothycrosley/pies
