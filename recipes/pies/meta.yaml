@@ -13,10 +13,12 @@ requirements:
   build:
     - python
     - enum34 # [py27]
+    - pies2overrides # [py27]
 
   run:
     - python
     - enum34 # [py27]
+    - pies2overrides  # [py27]
 
 test:
   imports:
