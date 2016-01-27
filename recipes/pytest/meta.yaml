@@ -11,12 +11,12 @@ build:
 
 requirements:
   build:
-    - python
+    - python x.x
     - py  >=1.4.29
     - colorama # [win]
 
   run:
-    - python
+    - python x.x
     - py  >=1.4.29
     - colorama # [win]
 
