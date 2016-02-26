@@ -26,3 +26,20 @@ Build status
 [![Build Status](https://travis-ci.org/JanSchulz/package-builder.svg?branch=master)](https://travis-ci.org/JanSchulz/package-builder)
 
 [![Build status](https://ci.appveyor.com/api/projects/status/github/JanSchulz/package-builder?branch/master&svg=true)](https://ci.appveyor.com/project/JanSchulz/package-builder/branch/master)
+
+Process
+-------
+
+- fork https://github.com/JanSchulz/package-builder
+- Turn on CI
+  + https://travis-ci.org/profile/<GH Username>
+  + https://ci.appveyor.com/project/<GH Username>/package-builder
+  + https://circleci.com/add-projects
+- git clone
+- create an Anaconda/Binstar API key
+  - `anaconda auth --create --name packageBuilder --scores 'all'`
+- Encrypt the token, add to build
+  - https://ci.appveyor.com/tools/encrypt -> appveyor.yml
+  - `travis encrypt BINSTAR_TOKEN=<TheKey>` -> .travis.yml
+  - Project Settings > Environment Variables on circle CI website.
+- Write you're recipe.

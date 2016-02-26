@@ -12,7 +12,8 @@ environment:
 
   BINSTAR_TOKEN:
     # Generated with 'anaconda auth --create --name JascRecipesAppveyor --scopes "repos conda api"' and encrypted on ci.appveyor.com/tools/encrypt. 
-    secure: 6nTE13FCkSFChbPOOtQLXOW0onh3sBpUGJew9iI8sztvY/YBP+JAGoYhbY9tubG5
+    secure: ZTtfbb3eukHcvHiZqTlEIfbSez+/alKg1VXNrpXtiRwURDUIUS9JjiVJBUJpKhQn
+
   PYPI_USER:
     secure: WmnI0UBQomLfClG70AGa9A==
   PYPI_PASS:

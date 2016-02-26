@@ -5,12 +5,13 @@ sudo: false
 
 env:
     global:
-        # Add the BINSTAR_TOKEN environment variable. This has been generated with 
-        # 'anaconda auth --create --name JascRecipesTravis --scopes "repos conda api"' 
+        # Add the BINSTAR_TOKEN environment variable. This has been generated with
+        # 'anaconda auth --create --name JascRecipesTravis --scopes "repos conda api"'
         # then "travis encrypt BINSTAR_TOKEN=<token_id>"
         # PYPI_USER
         # PYPI_PASS
         # all via web...
+      - secure: "oZMrO4/td3VaSe1az5FDQk3rMFmWmQGtVHQqCl5MttEzfXlXrysxPZVefP+gl7CM9BjBw6X2bbLmqH8S3yRpmYnZjOVdRsMtlDAALHn5eyDiAXUaE7qUUsqUmaRV3YOECUW1O8HuRVqjLlaBOptRBDWyt4usdkPLMWQAY82rpNWjoTP+hUtlTNYv6q9mSTApQXyZw7pW75irbG88lyoKgd+LR6ALU2R8Rr+qeApe6tjsISqMofosV4VF4awuaskBs9LVi4AHR/b12Qm3zfVJBfFY6CXJ0CTY1yglzc176tdxC+69LQRO+c/qHepIkLyzoXv6ZeJmQXOAKDnDB3kHjEzLzhv1eliytwlclXnLuHk8VDiHtVKAe56tkW8bzb1u3doaR0KQHXYvqtCikfONofo/dQcEx4f5zvDNzl7ixrEgpgHkXEplduOaUDzhUoT3LkcgFjnJL4gnHqbT1oQ/S6Pwm0ZnPytKmC1hweD5qJY2N+jA/TSq/7NRM7/vmGEvVbhlXKEkYqwpGSq6FLl6CveGvV35YKjIJYv7xPnLppY7jeycqbl1mRuwqJu5tOhxur8ksqONb8ua6NofiMpN53YQB+QErazM8WNYANoH/kkbqE++DabYy/65zmU2UVIqqQ5krTxuZ6962yV4s5HsWFxbyQ6fZIKyWjdM0R/u2Y8="
 
 addons:
     apt:
@@ -35,7 +36,7 @@ install:
     - conda info
     - obvci_install_conda_build_tools.py
     - pip install twine
-    
+
 script:
     #- obvci_conda_build_dir /conda-recipes $UPLOAD_OWNER --build-condition "python >=3.4,<3.5|>=3.5,<3.6|>=2.7,<3"
     # workaround for https://github.com/pelson/Obvious-CI/issues/52
@@ -45,4 +46,4 @@ script:
     - obvci_conda_build_dir ./recipes janschulz --channel main --build-condition "python >=3.5,<3.6"
     - export CONDA_PY=27
     - obvci_conda_build_dir ./recipes janschulz --channel main --build-condition "python >=2.7,<3"
-    
+

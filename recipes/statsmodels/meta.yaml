@@ -1,18 +1,18 @@
 package:
   name: statsmodels
-  version: "0.6.1"
+  version: {{ GIT_DESCRIBE_TAG }}
 
 source:
   git_url: https://github.com/statsmodels/statsmodels.git
   git_tag: v0.6.1
 
 build:
-  number: 0
+  number: {{ GIT_DESCRIBE_NUMBER|int }}
 
 requirements:
   build:
     - python
-    - distribute # [not py35]
+    - setuptools
     - cython
     - numpy
     - scipy
