@@ -7,7 +7,7 @@ source:
   git_tag: v0.6.1
 
 build:
-  number: {{ GIT_DESCRIBE_NUMBER|int }}
+  number: {{ GIT_DESCRIBE_NUMBER|int if GIT_DESCRIBE_NUMBER else 0}}
 
 requirements:
   build:
