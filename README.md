@@ -21,11 +21,11 @@ conda install pypandoc
 Build status
 ------------
 
-[![Circle CI](https://circleci.com/gh/JanSchulz/package-builder/tree/master.svg?style=svg)](https://circleci.com/gh/JanSchulz/package-builder/tree/master)
+[![Circle CI](https://circleci.com/gh/TomAugspurger/package-builder/tree/master.svg?style=svg)](https://circleci.com/gh/TomAugspurger/package-builder/tree/master)
 
-[![Build Status](https://travis-ci.org/JanSchulz/package-builder.svg?branch=master)](https://travis-ci.org/JanSchulz/package-builder)
+[![Build Status](https://travis-ci.org/TomAugspurger/package-builder.svg?branch=master)](https://travis-ci.org/TomAugspurger/package-builder)
 
-[![Build status](https://ci.appveyor.com/api/projects/status/github/JanSchulz/package-builder?branch/master&svg=true)](https://ci.appveyor.com/project/JanSchulz/package-builder/branch/master)
+[![Build status](https://ci.appveyor.com/api/projects/status/github/TomAugspurger/package-builder?branch/master&svg=true)](https://ci.appveyor.com/project/TomAugspurger/package-builder/branch/master)
 
 Process
 -------
@@ -43,3 +43,5 @@ Process
   - `travis encrypt BINSTAR_TOKEN=<TheKey>` -> .travis.yml
   - Project Settings > Environment Variables on circle CI website.
 - Write you're recipe.
+- Update upload endpoints
+

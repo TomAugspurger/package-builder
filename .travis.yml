@@ -31,7 +31,6 @@ install:
     - python bootstrap-obvious-ci-and-miniconda.py ~/miniconda x64 2 --without-obvci && source ~/miniconda/bin/activate root
     - conda config --set show_channel_urls True
     - conda install -c http://conda.anaconda.org/pelson/channel/development --yes --quiet obvious-ci
-    - conda config --add channels janschulz
     - conda config --set show_channel_urls yes
     - conda info
     - obvci_install_conda_build_tools.py
@@ -41,9 +40,9 @@ script:
     #- obvci_conda_build_dir /conda-recipes $UPLOAD_OWNER --build-condition "python >=3.4,<3.5|>=3.5,<3.6|>=2.7,<3"
     # workaround for https://github.com/pelson/Obvious-CI/issues/52
     - export CONDA_PY=34
-    - obvci_conda_build_dir ./recipes janschulz --channel main --build-condition "python >=3.4,<3.5"
+    - obvci_conda_build_dir ./recipes taugspurger --channel main --build-condition "python >=3.4,<3.5"
     - export CONDA_PY=35
-    - obvci_conda_build_dir ./recipes janschulz --channel main --build-condition "python >=3.5,<3.6"
+    - obvci_conda_build_dir ./recipes taugspurger --channel main --build-condition "python >=3.5,<3.6"
     - export CONDA_PY=27
-    - obvci_conda_build_dir ./recipes janschulz --channel main --build-condition "python >=2.7,<3"
+    - obvci_conda_build_dir ./recipes taugspurger --channel main --build-condition "python >=2.7,<3"
 

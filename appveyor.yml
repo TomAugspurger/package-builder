@@ -11,7 +11,7 @@ environment:
   PYTHONIOENCODING: "UTF-8"
 
   BINSTAR_TOKEN:
-    # Generated with 'anaconda auth --create --name JascRecipesAppveyor --scopes "repos conda api"' and encrypted on ci.appveyor.com/tools/encrypt. 
+    # Generated with 'anaconda auth --create --name JascRecipesAppveyor --scopes "repos conda api"' and encrypted on ci.appveyor.com/tools/encrypt.
     secure: ZTtfbb3eukHcvHiZqTlEIfbSez+/alKg1VXNrpXtiRwURDUIUS9JjiVJBUJpKhQn
 
   PYPI_USER:
@@ -21,7 +21,7 @@ environment:
 
   matrix:
     # Note: Because we have to separate the py2 and py3 components due to compiler version, we have a race condition for non-python packages.
-    # Not sure how to resolve this, but maybe we should be tracking the VS version in the build string anyway? 
+    # Not sure how to resolve this, but maybe we should be tracking the VS version in the build string anyway?
     - TARGET_ARCH: "x86"
       CONDA_PY: "27"
       PY_CONDITION: "python >=2.7,<3"
@@ -52,7 +52,6 @@ install:
     - cmd: conda install -c http://conda.anaconda.org/pelson/channel/development --yes --quiet obvious-ci
     - cmd: obvci_install_conda_build_tools.py
 
-    - cmd: conda config --add channels janschulz
     - cmd: conda config --set show_channel_urls yes
     - cmd: conda info
     - cmd: pip install twine
@@ -63,4 +62,4 @@ install:
 build: off
 
 test_script:
-    - '%CMD_IN_ENV% obvci_conda_build_dir recipes janschulz --channel main  --build-condition "%PY_CONDITION%"'
+    - '%CMD_IN_ENV% obvci_conda_build_dir recipes taugspurger --channel main  --build-condition "%PY_CONDITION%"'
