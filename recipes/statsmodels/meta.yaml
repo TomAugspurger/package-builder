@@ -6,7 +6,7 @@ source:
   git_url: https://github.com/statsmodels/statsmodels.git
 
 build:
-  number: {{ GIT_DESCRIBE_NUMBER|int if GIT_DESCRIBE_NUMBER else 0}}
+  number: {{ 0 }}
 
 requirements:
   build:
