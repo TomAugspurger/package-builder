@@ -1,6 +1,6 @@
 package:
   name: statsmodels
-  version: {{ GIT_BUILD_STR }}
+  version: 0.8.0
 
 source:
   git_url: https://github.com/statsmodels/statsmodels.git
