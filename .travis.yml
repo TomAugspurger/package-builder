@@ -11,7 +11,7 @@ env:
         # PYPI_USER
         # PYPI_PASS
         # all via web...
-      - secure: "oZMrO4/td3VaSe1az5FDQk3rMFmWmQGtVHQqCl5MttEzfXlXrysxPZVefP+gl7CM9BjBw6X2bbLmqH8S3yRpmYnZjOVdRsMtlDAALHn5eyDiAXUaE7qUUsqUmaRV3YOECUW1O8HuRVqjLlaBOptRBDWyt4usdkPLMWQAY82rpNWjoTP+hUtlTNYv6q9mSTApQXyZw7pW75irbG88lyoKgd+LR6ALU2R8Rr+qeApe6tjsISqMofosV4VF4awuaskBs9LVi4AHR/b12Qm3zfVJBfFY6CXJ0CTY1yglzc176tdxC+69LQRO+c/qHepIkLyzoXv6ZeJmQXOAKDnDB3kHjEzLzhv1eliytwlclXnLuHk8VDiHtVKAe56tkW8bzb1u3doaR0KQHXYvqtCikfONofo/dQcEx4f5zvDNzl7ixrEgpgHkXEplduOaUDzhUoT3LkcgFjnJL4gnHqbT1oQ/S6Pwm0ZnPytKmC1hweD5qJY2N+jA/TSq/7NRM7/vmGEvVbhlXKEkYqwpGSq6FLl6CveGvV35YKjIJYv7xPnLppY7jeycqbl1mRuwqJu5tOhxur8ksqONb8ua6NofiMpN53YQB+QErazM8WNYANoH/kkbqE++DabYy/65zmU2UVIqqQ5krTxuZ6962yV4s5HsWFxbyQ6fZIKyWjdM0R/u2Y8="
+      - secure: "QJttfT8Bfkprw7UIaPNuQL39+McgREOE10CIOcmd5mWqbSPOy77uE606rvxUZw0r0m3T+9cphTiJ5AaEARzCW6InWEtTNEofgg4C0EwqcAKI14BDHaZNBYUkRJTVGyQ57ebyiapAeLxL41HoPbXpoG9bs65H55UxaXdQ1HTswvaBz1kHp0NeDDmBWpIQPlgXK2W9burvV0b9zeWPh9QAVkIXvscWNqiMrtmyFid4EHhkC+Pb+7b3MJtuizrjqQINZ51lD1SZYxxuT2e9FwaLXXZr6CBokcf+D/MTD2Nw6zJrM6/Y+u1BRsSmk0DW34S3mKMsJwcaHCZGdn68HRLU/0x0JTA8TO/zEnJXM6YKL17JSmIQBpbXbZxuF4cS7wV4sENxJETRnu6WnMcRQwQ5HVz2fSiePmfN6pXu2DN8k8PoanVJR+wHXCH8svvU966zzHVTgpeJuQag0yTpevsqIyq1DVP7V0q59nIhfi3r5O/EGAsQJVXY+cWDLgPiSmv1htgm0IfJqPjqI+SQEiAn7abIy8d+1ttTa8tDUyQ12eVEFVL516fTX0mIeRpw/0ZHhpXvuplB5Wj+E1FZ6mXlNXK9lobH/NzCHaMnnX0+sJdBkKfnUe6WzYYycGsVlnQNu5uIfbYoKAaN/zName5WloPqqIk8qNwBFRoa9uC+lCI="
 
 addons:
     apt:
@@ -40,9 +40,9 @@ script:
     #- obvci_conda_build_dir /conda-recipes $UPLOAD_OWNER --build-condition "python >=3.4,<3.5|>=3.5,<3.6|>=2.7,<3"
     # workaround for https://github.com/pelson/Obvious-CI/issues/52
     - export CONDA_PY=34
-    - obvci_conda_build_dir ./recipes taugspurger --channel main --build-condition "python >=3.4,<3.5"
+    - obvci_conda_build_dir ./recipes TomAugspurger --channel main --build-condition "python >=3.4,<3.5"
     - export CONDA_PY=35
-    - obvci_conda_build_dir ./recipes taugspurger --channel main --build-condition "python >=3.5,<3.6"
+    - obvci_conda_build_dir ./recipes TomAugspurger --channel main --build-condition "python >=3.5,<3.6"
     - export CONDA_PY=27
-    - obvci_conda_build_dir ./recipes taugspurger --channel main --build-condition "python >=2.7,<3"
+    - obvci_conda_build_dir ./recipes TomAugspurger --channel main --build-condition "python >=2.7,<3"
 

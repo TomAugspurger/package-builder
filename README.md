@@ -37,7 +37,7 @@ Process
   + https://circleci.com/add-projects
 - git clone
 - create an Anaconda/Binstar API key
-  - `anaconda auth --create --name packageBuilder --scores 'all'`
+  - `anaconda auth --create --name packageBuilder --scopes 'all'`
 - Encrypt the token, add to build
   - https://ci.appveyor.com/tools/encrypt -> appveyor.yml
   - `travis encrypt BINSTAR_TOKEN=<TheKey>` -> .travis.yml

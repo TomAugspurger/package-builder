@@ -12,7 +12,7 @@ environment:
 
   BINSTAR_TOKEN:
     # Generated with 'anaconda auth --create --name JascRecipesAppveyor --scopes "repos conda api"' and encrypted on ci.appveyor.com/tools/encrypt.
-    secure: ZTtfbb3eukHcvHiZqTlEIfbSez+/alKg1VXNrpXtiRwURDUIUS9JjiVJBUJpKhQn
+    secure: A4yY9axLm1pPX3154s4fMMc8GB6Olr0puFRTMwiCwNGZ3Cc3vgLhPlyJyBuDSIRw
 
   PYPI_USER:
     secure: WmnI0UBQomLfClG70AGa9A==
@@ -62,4 +62,4 @@ install:
 build: off
 
 test_script:
-    - '%CMD_IN_ENV% obvci_conda_build_dir recipes taugspurger --channel main  --build-condition "%PY_CONDITION%"'
+    - '%CMD_IN_ENV% obvci_conda_build_dir recipes TomAugspurger --channel main  --build-condition "%PY_CONDITION%"'
